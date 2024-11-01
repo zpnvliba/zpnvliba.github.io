@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>BigPeng</title><meta name="author" content="大鹏"><meta name="copyright" content="大鹏"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="BigPeng">
+<meta property="og:url" content="http://zpnvliba.github.io/index.html">
+<meta property="og:site_name" content="BigPeng">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/zpnvliba/images/main/202404071315483.jpg">
+<meta property="article:author" content="大鹏">
+<meta property="article:tag" content="大鹏的博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zpnvliba/images/main/202404071315483.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://zpnvliba.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.14.0-b2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.35/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>(()=>{
+      const saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+      
+      window.btf = {
+        saveToLocal: saveToLocal,
+        getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+          script.src = url
+          script.async = true
+          script.onerror = reject
+          script.onload = script.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            script.onload = script.onreadystatechange = null
+            resolve()
+          }
+
+          Object.keys(attr).forEach(key => {
+            script.setAttribute(key, attr[key])
+          })
+
+          document.head.appendChild(script)
+        }),
+
+        getCSS: (url, id = false) => new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+          link.rel = 'stylesheet'
+          link.href = url
+          if (id) link.id = id
+          link.onerror = reject
+          link.onload = link.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            link.onload = link.onreadystatechange = null
+            resolve()
+          }
+          document.head.appendChild(link)
+        }),
+
+        addGlobalFn: (key, fn, name = false, parent = window) => {
+          const pjaxEnable = false
+          if (!pjaxEnable && key.startsWith('pjax')) return
+
+          const globalFn = parent.globalFn || {}
+          const keyObj = globalFn[key] || {}
+    
+          if (name && keyObj[name]) return
+    
+          name = name || Object.keys(keyObj).length
+          keyObj[name] = fn
+          globalFn[key] = keyObj
+          parent.globalFn = globalFn
+        }
+      }
+    
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+      
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })()</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'BigPeng',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-11-01 21:18:32'
+}</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://raw.githubusercontent.com/zpnvliba/images/main/202404071315483.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div><hr class="custom-hr"/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://raw.githubusercontent.com/zpnvliba/images/main/202404062326054.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="BigPeng"><span class="site-name">BigPeng</span></a></span><div id="menus"><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">BigPeng</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/08/28/CentOS8%E5%AE%89%E8%A3%85PostgreSQL14/" title="CentOS8安装PostgreSQL14">CentOS8安装PostgreSQL14</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-28T14:24:47.000Z" title="发表于 2024-08-28 22:24:47">2024-08-28</time></span></div><div class="content">下面是关于如何在 CentOS8 上快速安装 PostgreSQL 14，并自定义数据目录和配置修改的步骤：
+1. 安装 PostgreSQL 14
+添加 PostgreSQL 官方仓库：
+1sudo dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
+禁用默认的 PostgreSQL 模块：
+1sudo dnf -qy module disable postgresql
+
+安装 PostgreSQL 14 服务器：
+1sudo dnf install -y postgresql14-server
+
+2. 初始化数据库和服务
+初始化数据库（可以直接用下面的指定目录初始化，默认数据目录是&#x2F;var&#x2F;lib&#x2F;pgsql&#x2F;14&#x2F;data）：
+1sudo /usr/pgsql-14/bin/postgresql-14-setup initdb
+
+启用并启动 Post ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/08/27/1%E7%A7%92%E5%B0%86%E6%9C%AC%E5%9C%B0SpringBoot%E9%A1%B9%E7%9B%AEjar%E5%8C%85%E9%83%A8%E7%BD%B2%E5%88%B0Linux%E7%8E%AF%E5%A2%83/" title="1秒将本地SpringBoot项目jar包部署到Linux环境">1秒将本地SpringBoot项目jar包部署到Linux环境</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-27T13:37:55.000Z" title="发表于 2024-08-27 21:37:55">2024-08-27</time></span></div><div class="content">1秒将本地SpringBoot项目jar包部署到Linux环境在IDEA编辑器中一键将本地已经打包好的SpringBoot项目部署到linux环境，实现秒级部署
+目标
+在IDEA编辑器中一键将本地已经打包好的SpringBoot项目部署到linux环境，实现秒级部署 前置知识：需掌握Maven的打包
+
+迭代步骤
+
+在windows环境使用命令启动SpringBoot项目
+在Linux环境使用命令启动项目
+在Linux环境使用脚本启动项目
+优化脚本，每次启动时先关闭旧项目
+分离依赖，每次上传Linux环境只上传几百k的代码包
+搭配IDEA插件，实现在IDEA中一键部署启动
+
+
+一、前提：有一个Windows环境可以启动的SpringBoot项目jar包1、使用Maven的package命令打出一个携带依赖的jar包例如：
+
+2、Window启动jar包1java -jar SpringBootTest-0.0.1-SNAPSHOT.jar
+
+
+
+启动完毕，说明jar包是可以正常启动的。
+
+二、linux环境启动jar包1、先将jar包扔到linux环境
+2、测试是否可以启动（需要有Jav ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/06/29/Nginx%E6%9E%81%E7%AE%80%E6%95%99%E7%A8%8B/" title="Nginx极简教程">Nginx极简教程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-06-29T01:32:52.000Z" title="发表于 2024-06-29 09:32:52">2024-06-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/nginx/">nginx</a></span></div><div class="content">Nginx 极简教程一、Nginx 简介什么是 Nginx?
+Nginx (engine x) 是一款轻量级的 Web 服务器 、反向代理服务器及电子邮件（IMAP&#x2F;POP3）代理服务器。
+
+
+
+
+什么是反向代理？
+反向代理（Reverse Proxy）方式是指以代理服务器来接受 internet 上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给 internet 上请求连接的客户端，此时代理服务器对外就表现为一个反向代理服务器。
+
+二、Nginx 入门nginx 的使用比较简单，就是几条命令。
+常用到的命令如下：
+12345678nginx -s stop       快速关闭Nginx，可能不保存相关信息，并迅速终止web服务。nginx -s quit       平稳关闭Nginx，保存相关信息，有安排的结束web服务。nginx -s reload     因改变了Nginx相关配置，需要重新加载配置而重载。nginx -s reopen     重新打开日志文件。nginx -c filename   为 Nginx 指定一个配置文 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/06/08/Centos7%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="Centos7常用命令">Centos7常用命令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-06-08T09:37:49.000Z" title="发表于 2024-06-08 17:37:49">2024-06-08</time></span></div><div class="content">CentOS7常用命令一、远程访问&#x2F;网络12345678#1、安装网络工具包：yum install -y net-tools#2、查看命令：ifconfig#3、安装ssh-serveryum install -y openssh-server#4、安装wgetyum install -y wget
+
+二、systemctl命令12345678910111213141516#开机运行服务：systemctl enable *.service#取消开机运行systemctl disable *.service#启动服务systemctl start *.service#停止服务systemctl stop *.service#重启服务systemctl restart *.service#重新加载服务配置文件systemctl reload *.service#查询服务运行状态systemctl status *.service#显示启动失败的服务systemctl --failed
+
+三、安装telnet1234#注意需要Root权限yum install -y xinet ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/31/SpringBoot-%E8%99%9A%E6%8B%9F%E7%BA%BF%E7%A8%8B%EF%BC%8C%E6%8F%90%E5%8D%87IO%E5%AF%86%E9%9B%86%E5%9E%8B%E4%BB%BB%E5%8A%A1/" title="SpringBoot+虚拟线程，提升IO密集型任务">SpringBoot+虚拟线程，提升IO密集型任务</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-31T02:06:01.000Z" title="发表于 2024-05-31 10:06:01">2024-05-31</time></span></div><div class="content">什么是虚拟线程虚拟线程是Java19开始增加的一个特性哦，和Golang的协程类似，一个其它语言早就提供的、且如此实用且好用的功能，作为一个Java开发者，早就已经望眼欲穿了。
+虚拟线程和普通线程的区别“虚拟”线程，望文生义，它是“假”的，它不直接调度操作系统的线程，而是由JVM再提供一层线程的接口抽象，由普通线程调度，即一个普通的操作系统线程可以调度成千上万个虚拟线程。
+虚拟线程比普通线程的消耗要小得多得多，在内存足够的情况下，我们甚至可以创建上百万的虚拟线程，这在之前(Java19以前)是不可能的。
+SpringBoot使用虚拟线程下面我们会在SpringBoot中使用虚拟线程，将默认的异步线程池和http处理线程池替换为虚拟线程，然后对比虚拟线程和普通线程的性能差异，你会发现差别就像马车换高铁，不是一个时代的东西。
+配置首先我们使用的Java版本是java-20.0.2-oracle，SpringBoot版本是3.1.2。
+要在SpringBoot中使用虚拟线程很简单，增加如下配置即可：
+12345678910111213141516171819/** * 配置是用于稍后测试，s ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/22/%E4%BB%80%E4%B9%88%E6%98%AFk8s/" title="什么是k8s">什么是k8s</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-22T03:24:18.000Z" title="发表于 2024-05-22 11:24:18">2024-05-22</time></span></div><div class="content">你是一个程序员，你用代码写了一个博客应用服务，并将它部署在了云平台上。但应用服务太过受欢迎，访问量太大，经常会挂。
+
+所以你用了一些工具自动重启挂掉的应用服务，并且将应用服务部署在了好几个服务器上，总算抗住了。
+
+后来你又上线了商城应用服务和语音应用服务，随着应用服务变多 ，需求也千奇百怪。有的应用服务不希望被外网访问到，有的部署的时候要求内存得大于 xxGB 才能正常跑。你每次都需要登录到各个服务器上，执行手动 操作更新。不仅容易出错，还贼浪费时间 。
+原本就没时间找女朋友的你，现在哭得更大声了。
+那么问题就来了，有没有一个办法，可以解决上面的问题？当然有，没有什么是加一个中间层不能解决的，如果有，那就再加一层 。这次我们要加的中间层，叫 Kubernetes 。
+
+Kubernetes的位置
+Kubernetes 是什么？Kubernetes，它是 G 家 开源的神器，因为单词太长，所以我们习惯省略中间 8 个字母，简称它为 k8s 。
+
+k8s名称的由来
+它介于应用服务 和服务器 之间，能够通过策略，协调和管理多个应用服务，只需要一个 yaml 文件配置，定义应用的部署顺序等信息 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/13/Redis%E7%BC%93%E5%AD%98%E9%A2%84%E7%83%AD%EF%BC%8C%E8%AF%A5%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%EF%BC%9F/" title="Redis缓存预热，该如何实现？">Redis缓存预热，该如何实现？</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-13T11:56:37.000Z" title="发表于 2024-05-13 19:56:37">2024-05-13</time></span></div><div class="content">什么是缓存预热？缓存预热是一种在程序启动或缓存失效之后，主动将热点数据加载到缓存中的策略。这样，在实际请求到达程序时，热点数据已经存在于缓存中，从而减少了缓存穿透和缓存击穿的情况，也缓解了SQL服务器的压力。
+实现缓存抽象类首先我们先来实现一个缓存抽象类，这个抽象类的作用就是在将来我们需要将某个模块的数据需要提前加载到缓存中的时候，我们可以创建一个它的实现类，来进行数据的缓存与加载，具体使用方式请看后边我写的例子。
+12345678910111213141516171819202122232425262728public abstract class AbstractCache &#123;    /**     * 缓存     */    protected abstract void init();    /**     * 获取缓存     *     * @param &lt;T&gt;     * @return     */    public abstract &lt;T&gt; T get();    /**     * 清理缓存     */    public a ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/04/30/mybatis-plus%E6%95%B4%E5%90%88%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90/" title="mybatis-plus整合多数据源">mybatis-plus整合多数据源</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-04-30T03:15:33.000Z" title="发表于 2024-04-30 11:15:33">2024-04-30</time></span></div><div class="content">
+提出问题
+
+在平时开发中，经常会遇到在一个项目里需要使用多个数据源的情况，比如有一部分数据在数据源A，另一部分数据在数据源B，业务需要把这两部分的数据做合并然后从接口返回。
+又或者操作完数据源A后，需要切换数据源，操作数据源B。这样的需求，怎么实现？
+解决问题其实在mybatis-plus就有相关的实现，是一个基于SpringBoot快速集成多数据源的启动器。
+首先要搭建一个springBoot+Mybatis+Mybatis-Plus的项目，搭建项目就不演示了，比较简单。这里讲怎么使用多数据源，首先引入dynamic-datasource-spring-boot-starter。
+12345&lt;dependency&gt;  &lt;groupId&gt;com.baomidou&lt;/groupId&gt;  &lt;artifactId&gt;dynamic-datasource-spring-boot-starter&lt;/artifactId&gt;  &lt;version&gt;$&#123;version&#125;&lt;/version&gt;&lt;!- ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/04/29/%E4%B8%80%E6%96%87%E8%AF%BB%E6%87%82MySQL%E7%9A%84%E7%B4%A2%E5%BC%95%E7%BB%93%E6%9E%84%E5%8F%8A%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/" title="一文读懂MySQL的索引结构及查询优化">一文读懂MySQL的索引结构及查询优化</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-04-29T09:46:25.000Z" title="发表于 2024-04-29 17:46:25">2024-04-29</time></span></div><div class="content">回顾前文: 一文学会MySQL的explain工具
+(同时再次强调，这几篇关于MySQL的探究都是基于5.7版本，相关总结与结论不一定适用于其他版本)
+MySQL官方文档中(https://dev.mysql.com/doc/refman/5.7/en/optimization-indexes.html)有这样一段描述：
+
+The best way to improve the performance of SELECT operations is to create indexes on one or more of the columns that are tested in the query. But unnecessary indexes waste space and waste time for MySQL to determine which indexes to use. Indexes also add to the cost of inserts, updates, and deletes because each index must be updated. Y ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/04/29/%E4%B8%80%E6%96%87%E5%AD%A6%E4%BC%9AMySQL%E7%9A%84explain%E5%B7%A5%E5%85%B7/" title="一文学会MySQL的explain工具">一文学会MySQL的explain工具</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-04-29T09:40:42.000Z" title="发表于 2024-04-29 17:40:42">2024-04-29</time></span></div><div class="content">开篇说明(1) 本文将细致介绍MySQL的explain工具，是下一篇《一文读懂MySQL的索引机制及查询优化》的准备篇。
+(2) 本文主要基于MySQL5.7版本(https://dev.mysql.com/doc/refman/5.7/en/)，MySQL8.x版本可另行翻阅对应版本文档(https://dev.mysql.com/doc/refman/8.0/en/)。
+(3) 演示过程中的建库、建表、建索引等语句仅为了测试explain工具的使用，并未考虑实际应用场景的合理性。
+explain工具介绍相关文档：https://dev.mysql.com/doc/refman/5.7/en/explain.htmlhttps://dev.mysql.com/doc/refman/5.7/en/using-explain.html
+
+EXPLAIN is used to obtain a query execution plan (that is, an explanation of how MySQL would execute a query).
+
+简单翻译一下，就是expla ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://raw.githubusercontent.com/zpnvliba/images/main/202404071315483.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">大鹏</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zpnvliba"><i class="fab fa-github"></i><span>来大鹏家看看呗</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到大鹏的博客</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/28/CentOS8%E5%AE%89%E8%A3%85PostgreSQL14/" title="CentOS8安装PostgreSQL14">CentOS8安装PostgreSQL14</a><time datetime="2024-08-28T14:24:47.000Z" title="发表于 2024-08-28 22:24:47">2024-08-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/27/1%E7%A7%92%E5%B0%86%E6%9C%AC%E5%9C%B0SpringBoot%E9%A1%B9%E7%9B%AEjar%E5%8C%85%E9%83%A8%E7%BD%B2%E5%88%B0Linux%E7%8E%AF%E5%A2%83/" title="1秒将本地SpringBoot项目jar包部署到Linux环境">1秒将本地SpringBoot项目jar包部署到Linux环境</a><time datetime="2024-08-27T13:37:55.000Z" title="发表于 2024-08-27 21:37:55">2024-08-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/29/Nginx%E6%9E%81%E7%AE%80%E6%95%99%E7%A8%8B/" title="Nginx极简教程">Nginx极简教程</a><time datetime="2024-06-29T01:32:52.000Z" title="发表于 2024-06-29 09:32:52">2024-06-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/08/Centos7%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="Centos7常用命令">Centos7常用命令</a><time datetime="2024-06-08T09:37:49.000Z" title="发表于 2024-06-08 17:37:49">2024-06-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/31/SpringBoot-%E8%99%9A%E6%8B%9F%E7%BA%BF%E7%A8%8B%EF%BC%8C%E6%8F%90%E5%8D%87IO%E5%AF%86%E9%9B%86%E5%9E%8B%E4%BB%BB%E5%8A%A1/" title="SpringBoot+虚拟线程，提升IO密集型任务">SpringBoot+虚拟线程，提升IO密集型任务</a><time datetime="2024-05-31T02:06:01.000Z" title="发表于 2024-05-31 10:06:01">2024-05-31</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Elasticsearch/"><span class="card-category-list-name">Elasticsearch</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/MySql/"><span class="card-category-list-name">MySql</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/MySql/%E4%B8%80%E6%9D%A1Sql%E6%89%A7%E8%A1%8C%E6%9F%A5%E8%AF%A2%E8%BF%87%E7%A8%8B/"><span class="card-category-list-name">一条Sql执行查询过程</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/SQL/"><span class="card-category-list-name">SQL</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/SQL/MySql/"><span class="card-category-list-name">MySql</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/SpringCloud/"><span class="card-category-list-name">SpringCloud</span><span class="card-category-list-count">3</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/SpringCloud/Nacos/"><span class="card-category-list-name">Nacos</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/docker/"><span class="card-category-list-name">docker</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/explain/" style="font-size: 1.1em; color: #999">explain</a> <a href="/tags/%E6%8A%80%E5%B7%A7/" style="font-size: 1.1em; color: #999">技巧</a> <a href="/tags/MySql/" style="font-size: 1.3em; color: #99a1ac">MySql</a> <a href="/tags/SQL/" style="font-size: 1.1em; color: #999">SQL</a> <a href="/tags/ReentrantLock/" style="font-size: 1.1em; color: #999">ReentrantLock</a> <a href="/tags/SpringCloud/" style="font-size: 1.5em; color: #99a9bf">SpringCloud</a> <a href="/tags/Elasticsearch/" style="font-size: 1.5em; color: #99a9bf">Elasticsearch</a> <a href="/tags/nginx/" style="font-size: 1.3em; color: #99a1ac">nginx</a> <a href="/tags/rabbitmq/" style="font-size: 1.1em; color: #999">rabbitmq</a> <a href="/tags/Nacos/" style="font-size: 1.1em; color: #999">Nacos</a> <a href="/tags/%E5%AE%9E%E6%88%98/" style="font-size: 1.1em; color: #999">实战</a> <a href="/tags/%E6%BA%90%E7%A0%81/" style="font-size: 1.1em; color: #999">源码</a> <a href="/tags/docker/" style="font-size: 1.1em; color: #999">docker</a> <a href="/tags/Centos7/" style="font-size: 1.1em; color: #999">Centos7</a> <a href="/tags/%E5%8F%AF%E9%87%8D%E5%85%A5%E9%94%81/" style="font-size: 1.1em; color: #999">可重入锁</a> <a href="/tags/Executors/" style="font-size: 1.1em; color: #999">Executors</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 1.1em; color: #999">设计模式</a> <a href="/tags/AOP/" style="font-size: 1.3em; color: #99a1ac">AOP</a> <a href="/tags/%E4%B8%9A%E5%8A%A1%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/" style="font-size: 1.3em; color: #99a1ac">业务开发常见错误</a> <a href="/tags/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" style="font-size: 1.1em; color: #999">策略模式</a> <a href="/tags/%E7%BA%BF%E7%A8%8B%E6%B1%A0/" style="font-size: 1.1em; color: #999">线程池</a> <a href="/tags/%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98/" style="font-size: 1.1em; color: #999">线上问题</a> <a href="/tags/ConcurrentHashMap/" style="font-size: 1.1em; color: #999">ConcurrentHashMap</a> <a href="/tags/%E5%B9%B6%E5%8F%91/" style="font-size: 1.1em; color: #999">并发</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97/" style="font-size: 1.1em; color: #999">操作日志</a> <a href="/tags/%E7%B4%A2%E5%BC%95/" style="font-size: 1.1em; color: #999">索引</a> <a href="/tags/%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90/" style="font-size: 1.1em; color: #999">多数据源</a> <a href="/tags/%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98/" style="font-size: 1.1em; color: #999">性能调优</a> <a href="/tags/redis/" style="font-size: 1.3em; color: #99a1ac">redis</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">八月 2024</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><span class="card-archive-list-count">15</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">32</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2018-06-06T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-11-01T13:18:32.168Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://raw.githubusercontent.com/zpnvliba/images/main/202404062326054.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By 大鹏</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.14.0-b2"></script><script src="/js/main.js?v=4.14.0-b2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.35/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = (ele) => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from(ele).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+    
+    codeMermaidEle.forEach(ele => {
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.innerHTML = `<pre class="mermaid-src" hidden>${ele.textContent}</pre>`
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js').then(runMermaidFn)
+  }
+  
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
